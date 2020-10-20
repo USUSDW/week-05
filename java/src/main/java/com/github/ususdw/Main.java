@@ -37,18 +37,11 @@ public class Main {
                 String filename = parsedArgs.get(0);
                 File file = new File(filename);
                 if (file.exists()) {
-                    try {
-                        System.out.println("File " + file.getName());
-                        System.out.println("      Path: " + file.getAbsolutePath());
-                        System.out.println("    Length: " + file.length());
-                        System.out.println("  Readable: " + (file.canRead() ? "Yes" : "No"));
-                        System.out.println(" Writeable: " + (file.canWrite() ? "Yes" : "No"));
-                        System.out.println("Executable: " + (file.canExecute() ? "Yes" : "No"));
-                        System.out.println("  Contents: ");
-                        System.out.println(String.join("\n", Files.readAllLines(file.toPath())));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    System.out.println("File " + file.getName());
+                    System.out.println("      Path: " + file.getAbsolutePath());
+                    System.out.println("  Readable: " + (file.canRead() ? "Yes" : "No"));
+                    System.out.println(" Writeable: " + (file.canWrite() ? "Yes" : "No"));
+                    System.out.println("Executable: " + (file.canExecute() ? "Yes" : "No"));
                 }
                 else {
                     System.out.println("File does not exist.");
